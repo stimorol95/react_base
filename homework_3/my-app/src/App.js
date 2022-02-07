@@ -3,15 +3,16 @@ import './App.css';
 import { AUTHORS } from "./utils/constants";
 import { MessageList } from "./components/MessageList";
 import { FormMui } from "./components/FormMui";
-
-const chats = [
-  { name: "Chat1", id: "1" },
-  { name: "Chat2", id: "2" },
-];
+import { ChartList } from "./components/ChartList";
 
 function App() {
   const [messageList, setMessageList] = useState([]);
   const messagesEnd = useRef();
+  const [chats] = useState([
+    { id: 1, name: "First_chat" },
+    { id: 2, name: "Second_chat" },
+    { id: 3, name: "Third_chat" },
+  ]);
 
   const handleAddMessage = (text) => {
     sendMessage(text, AUTHORS.ME);
@@ -39,11 +40,7 @@ function App() {
 
   return (
     <div className="App">
-      <ul>
-        {chats.map((chat) => (
-          <li key={chat.id}>{chat.name}</li>
-        ))}
-      </ul>
+      <ChartList chats={chats} />
       <div className="App-content">
         <MessageList messages={messageList} />
         <div ref={messagesEnd} />
