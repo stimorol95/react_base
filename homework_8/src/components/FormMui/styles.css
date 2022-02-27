@@ -1,0 +1,10 @@
+.myBtn.MuiButton-containedPrimary {
+  background-color: green;
+  margin-top: 6px;
+}
+
+.myTxtField.MuiFormControl-root {
+  color: brown;
+  border-width: 4px;
+  margin-right: 15px;
+}
